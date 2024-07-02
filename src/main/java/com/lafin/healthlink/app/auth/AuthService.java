@@ -23,6 +23,11 @@ public class AuthService implements AuthUseCase {
     return Optional.empty();
   }
 
+  @Override
+  public Optional<Token> refreshToken(String accessToken, String refreshToken) {
+    return Optional.empty();
+  }
+
   private boolean isOkCreateTokenParam(String email, String password) {
     if (Objects.isNull(email) || Objects.isNull(password)) {
       return false;
@@ -33,10 +38,5 @@ public class AuthService implements AuthUseCase {
     }
 
     return true;
-  }
-
-  @Override
-  public Optional<Token> refreshToken(String accessToken, String refreshToken) {
-    return Optional.empty();
   }
 }
