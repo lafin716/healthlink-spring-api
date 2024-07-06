@@ -4,21 +4,22 @@ spring:
   application:
     name: HealthLinkApi
   jpa:
-    database: postgresql
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-        default_schema: public
         jdbc:
           time_zone: UTC
-    datasource:
-      url: jdbc:postgresql://localhost:5432/nss
-      username: lafin
-      password: lafin1234
-      driver-class-name: org.postgresql.Driver
-
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: lafin
+    password: lafin1234
+    driver-class-name: org.h2.Driver
+jwt:
+  issuer: HealthLink
+  secret: lafin1234
+  access-token-expires: 60
+  refresh-token-expires: 3600
 

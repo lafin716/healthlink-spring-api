@@ -17,8 +17,12 @@ class AuthServiceTest {
 
   @Test
   public void 토큰생성_정상() {
-    Optional<Token> newToken = authUseCase.createToken(null, null);
+    String email = "ys@g.c";
+    String pw = "test";
+    Optional<Token> newToken = authUseCase.createToken(email, pw);
 
     assertTrue(newToken.isPresent());
   }
+
+
 }

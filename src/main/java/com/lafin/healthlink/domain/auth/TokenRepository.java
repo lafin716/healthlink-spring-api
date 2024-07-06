@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository
 public interface TokenRepository extends JpaRepository<Token, Long> {
-  Optional<Token> findTopByUserIdAndAccessToken(UUID userId, String accessToken);
+  Optional<Token> findTokenByUserId(UUID userId);
+  Optional<Token> findTokenByAccessToken(String accessToken);
 }
